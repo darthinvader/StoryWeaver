@@ -7,11 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:report": "vitest run --coverage --reporter=html",
     "preview": "vite preview",
     "generate-routes": "npx tsr generate",
     "watch-routes": "npx tsr watch",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "playwright": "playwright test"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
