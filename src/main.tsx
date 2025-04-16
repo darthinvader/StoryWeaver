@@ -1,7 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import {
+  RouterProvider,
+  createRouter,
+  parseSearchWith,
+  stringifySearchWith,
+} from "@tanstack/react-router";
 
 import { routeTree } from "./routeTree.gen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +17,10 @@ const router = createRouter({
   routeTree,
   defaultPreloadStaleTime: 0,
   context: { queryClient },
+  parseSearch: parseSearchWith(JSON.parse),
+  stringifySearch: stringifySearchWith(JSON.stringify),
+  scrollRestoration: true,
+  defaultPreload: "intent",
 });
 
 // Register the router instance for type safety
