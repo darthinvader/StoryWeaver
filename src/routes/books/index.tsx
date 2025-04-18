@@ -10,9 +10,10 @@ import {
 import { BookCard } from "@/containers/Book-Card";
 import { createFileRoute } from "@tanstack/react-router";
 
-// Define the major categories in the desired display order (Newbie -> Advanced)
+// Define the major categories in the desired display order (Newest -> Older -> Advanced)
 const ORDERED_MAJOR_CATEGORIES = [
-  "coreRules", // Most essential
+  "5.5", // <-- ADDED: Newest rules first
+  "coreRules", // Original core rules
   "majorExpansionsPlayer", // Next step for players
   "adventureModules", // Essential for DMs running campaigns
   "majorExpansionsDM", // More DM resources (monsters, lore)
@@ -25,8 +26,10 @@ const ORDERED_MAJOR_CATEGORIES = [
 // Helper function to get a display-friendly name for the category
 function getCategoryDisplayName(categoryKey: string): string {
   switch (categoryKey) {
+    case "5.5": // <-- ADDED: Display name for the new category
+      return "Revised 2024 Rules (5.5E)";
     case "coreRules":
-      return "Core Rules (Start Here!)";
+      return "Core Rules (5E - Start Here!)"; // <-- UPDATED: Clarified 5E
     case "majorExpansionsPlayer":
       return "Player Expansions (More Options)";
     case "adventureModules":
@@ -41,13 +44,9 @@ function getCategoryDisplayName(categoryKey: string): string {
       return "Unearthed Arcana & Homebrew (Use with Caution)";
     case "miscellaneousThirdParty":
       return "Miscellaneous & Third Party";
-    case "5.5E":
-      return "5.5E (Experimental)"; // Added for clarity
-    case "homebrew":
-      return "Homebrew (Custom Content)"; // Added for clarity
-    case "misc":
-      return "Other Resources"; // Renamed for clarity
+    // Removed redundant cases for homebrew/misc as they fall into the grouping logic
     default:
+      // Fallback for any unexpected category keys (like 'misc' if it gets books)
       return categoryKey
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
@@ -92,12 +91,17 @@ function BooksPageComponent() {
   }
 
   // --- Group Books by Major Category ---
+  // NOTE: This logic remains the same. Because "5.5" is now first in
+  // ORDERED_MAJOR_CATEGORIES, books with the "5.5" tag will be assigned
+  // to the "5.5" group correctly.
   const groupedBooks = books.reduce(
     (acc, book) => {
+      // Find the *first* category from the ordered list that the book belongs to
       const majorCategory = book.categories?.find((cat) =>
         ORDERED_MAJOR_CATEGORIES.includes(cat),
       );
-      const groupKey = majorCategory || "misc"; // Assign to 'misc' if no major category found
+      // If no major category matches, assign it to 'misc'
+      const groupKey = majorCategory || "misc";
 
       if (!acc[groupKey]) {
         acc[groupKey] = [];
@@ -108,7 +112,7 @@ function BooksPageComponent() {
     {} as Record<string, Book[]>,
   );
 
-  // Define the final order, including 'misc' at the end
+  // Define the final order, including 'misc' at the end if it has books
   const displayOrder = [...ORDERED_MAJOR_CATEGORIES, "misc"];
 
   // Get keys of categories that actually have books, maintaining the desired order
@@ -121,22 +125,24 @@ function BooksPageComponent() {
     <div className="p-4 md:p-6">
       <Accordion
         type="multiple" // Allow multiple sections open
-        // Default to opening the first few categories (e.g., Core Rules, Player Expansions)
+        // Default to opening the newest rules, original core, and player expansions
         defaultValue={[
+          "5.5", // <-- ADDED: Open 5.5 by default
           "coreRules",
           "majorExpansionsPlayer",
-          "adventureModules",
+          // "adventureModules", // Optional: decide if you want this open too
         ].filter((key) => categoriesWithBooks.includes(key))} // Only default open if they exist
         className="w-full space-y-4"
       >
         {categoriesWithBooks.map((categoryKey) => {
           const booksInCategory = groupedBooks[categoryKey];
-          // We already filtered, so booksInCategory should always exist and have items
-          // if ( !booksInCategory || booksInCategory.length === 0) return null; // Redundant check now
+          // This check is technically redundant now due to filtering categoriesWithBooks
+          // if (!booksInCategory || booksInCategory.length === 0) return null;
 
           return (
             <AccordionItem value={categoryKey} key={categoryKey}>
               <AccordionTrigger className="bg-muted hover:bg-muted/90 rounded-md px-4 py-3 text-xl font-medium md:text-2xl">
+                {/* Use the display name function */}
                 {getCategoryDisplayName(categoryKey)} ({booksInCategory.length})
               </AccordionTrigger>
               <AccordionContent className="pt-4">
