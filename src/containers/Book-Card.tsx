@@ -34,7 +34,7 @@ export const BookCard = ({
       rel="noopener noreferrer"
     >
       <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-200 group-hover:shadow-lg">
-        <CardHeader className="p-4 md:p-6">
+        <CardHeader>
           <CardTitle className="text-lg md:text-xl lg:text-2xl">
             {title}
           </CardTitle>
@@ -68,9 +68,6 @@ export const BookCard = ({
             </div>
           )}
         </CardContent>
-
-        {/* Empty Footer to ensure consistent spacing if CardContent pushes it */}
-        <CardFooter className="p-4 md:p-6"></CardFooter>
       </Card>
     </a>
   );
