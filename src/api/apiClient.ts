@@ -2,7 +2,7 @@
 import ky from "ky";
 
 const apiClient = ky.create({
-  prefixUrl: process.env.REACT_APP_API_URL || "http://localhost:3000", // Use env var or default
+  prefixUrl: "http://localhost:3000", // TODO: Use env var later or default
   headers: {
     "Content-Type": "application/json",
   },

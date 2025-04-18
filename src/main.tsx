@@ -12,7 +12,9 @@ import { routeTree } from "./routeTree.gen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+
 const queryClient = new QueryClient();
+
 const router = createRouter({
   routeTree,
   defaultPreloadStaleTime: 0,

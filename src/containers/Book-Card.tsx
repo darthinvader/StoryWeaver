@@ -9,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link } from "@tanstack/react-router";
 
 interface BookCardProps {
   title: string;
@@ -26,8 +25,14 @@ export const BookCard = ({
   bookImage,
   categories = [],
 }: BookCardProps) => {
+  console.log("BookCard bookLink:", bookLink); // Debugging line
   return (
-    <Link to={bookLink} className="group block">
+    <a
+      href={bookLink}
+      target="_blank"
+      className="group block"
+      rel="noopener noreferrer"
+    >
       <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-200 group-hover:shadow-lg">
         <CardHeader className="p-4 md:p-6">
           <CardTitle className="text-lg md:text-xl lg:text-2xl">
@@ -67,7 +72,7 @@ export const BookCard = ({
         {/* Empty Footer to ensure consistent spacing if CardContent pushes it */}
         <CardFooter className="p-4 md:p-6"></CardFooter>
       </Card>
-    </Link>
+    </a>
   );
 };
 
