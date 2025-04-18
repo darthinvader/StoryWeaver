@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion"; // Import Accordion components
 // Import TooltipProvider - necessary for shadcn/ui tooltips to work
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BookCard } from "@/containers/Book-Card"; // Assumes BookCard handles its own tooltips
+import { BookCard } from "@/containers/book-card"; // Assumes BookCard handles its own tooltips
 import { createFileRoute } from "@tanstack/react-router";
 
 // Define the major categories in the desired display order (Newest -> Older -> Advanced)
