@@ -1,0 +1,403 @@
+{
+  "books": [
+    {
+      "categories": [
+        "base",
+        "classes",
+        "races",
+        "backgrounds",
+        "feats",
+        "creatures",
+        "items",
+        "spells"
+      ],
+      "description": "The Base D&D Book",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1Ybs_vU4vC9W6AlQ_Y41BLFqATFkAEs_k&export=download",
+      "imageUrl": "https://i.imgur.com/vbxznAp.jpg",
+      "title": "Player's Handbook (OCR Black&White) Small Size"
+    },
+    {
+      "categories": [
+        "base",
+        "classes",
+        "races",
+        "backgrounds",
+        "feats",
+        "creatures",
+        "items",
+        "spells"
+      ],
+      "description": "The Base D&D Book",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1gN-5wti1zyV7P5ncExd2vcZHee15d2Ku&export=download",
+      "imageUrl": "https://i.imgur.com/vbxznAp.jpg",
+      "title": "Player's Handbook (Color)"
+    },
+    {
+      "categories": ["base", "creatures", "dm"],
+      "description": "Most of the monster you need are here!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1Dj-xj6nK-X4cvceXxR4ALURCK2Mgj_pQ&export=download",
+      "imageUrl": "https://i.imgur.com/9KHc5T2.jpg",
+      "title": "Monster Manual"
+    },
+    {
+      "categories": ["base", "creatures", "dm", "items"],
+      "description": "DM's Grab This First!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1fOm07g3uxIT3VyMC2qF-YADxnkZcbHGJ&export=download",
+      "imageUrl": "https://i.imgur.com/HYClsr2.jpg",
+      "title": "Dungeon Master's Guide"
+    },
+    {
+      "categories": ["races", "creatures", "dm"],
+      "description": "More Enemies and Races!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1QOSNRdD9BVpnzyagwHtD7yhb2iQpVKgp&export=download",
+      "imageUrl": "https://i.imgur.com/wzQYzkU.jpg",
+      "title": "Mordenkaine's Tome Of Foes"
+    },
+    {
+      "categories": ["races", "creatures", "dm"],
+      "description": "Even More Enemies and Races!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1zecdG_2fvL8pDsJs2KABoTFPdg88E5I8&export=download",
+      "imageUrl": "https://i.imgur.com/MKwZNLj.jpg",
+      "title": "Volo’s Guide to Monsters"
+    },
+    {
+      "categories": ["classes", "feats", "spells"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1BVrZBJBi3UMi9jom5sQCPy565DZEDUVY&export=download",
+      "imageUrl": "https://i.imgur.com/bi8AerU.jpg",
+      "title": "Xanathar's Guide To Everything"
+    },
+    {
+      "categories": ["classes", "feats", "spells"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=16KE74X5PQyKUiSgzJXmgVi-bsbUCDpla&export=download",
+      "imageUrl": "https://i.imgur.com/tOz9nV7.jpg",
+      "title": "Tasha's Cauldron Of Everything"
+    },
+    {
+      "categories": ["classes", "races", "backgrounds", "spells"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1umExl1IP1BSKFIJmL3Y7PCiSRXGemist&export=download",
+      "imageUrl": "https://i.imgur.com/mtPNSvE.jpg",
+      "title": "Sword Coast Adventure Guide"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "backgrounds",
+        "spells",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1Xv87I96BVIhRdUSswsLdT0cYJcLhWCk2&export=download",
+      "imageUrl": "https://i.imgur.com/oH3IhwK.jpg",
+      "title": "Guildmasters’ Guide to Ravnica"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "backgrounds",
+        "spells",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1eLYhJm-jCeH1b6hdfCNA1FJlroZ1MKKc&export=download",
+      "imageUrl": "https://i.imgur.com/rUCVQjA.jpg",
+      "title": "Acquisition Incorporated"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "feats",
+        "backgrounds",
+        "spells",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1-u2__JMrtyinBfbn88DwFV89rsQNMLRp&export=download",
+      "imageUrl": "https://i.imgur.com/BpRo2zM.jpg",
+      "title": "Eberron Rising From The Last War"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "backgrounds",
+        "spells",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1hWvjab07by0aTNNczqlNRryShqeHjQ8b&export=download",
+      "imageUrl": "https://i.imgur.com/FNRLfBH.jpg",
+      "title": "Explorer's Guide To Wildemount"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "feats",
+        "backgrounds",
+        "spells",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1q4AcBZJG4ImZRVsuhHWMSh6t4PYFC3Bp&export=download",
+      "imageUrl": "https://i.imgur.com/lg3xwKG.jpg",
+      "title": "Mythic Odysseys of Theros"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "feats",
+        "backgrounds",
+        "items",
+        "creatures"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1BoelRwVXuGq5l5EJqOL0oOo-76CL1lTY&export=download",
+      "imageUrl": "https://i.imgur.com/kzE8cKw.jpg",
+      "title": "Van Richten's Guide To Ravenloft"
+    },
+    {
+      "categories": ["races", "spells"],
+      "description": "",
+      "downloadLink": "https://media.wizards.com/2015/downloads/dnd/EE_PlayersCompanion.pdf",
+      "imageUrl": "https://i.imgur.com/5O4HA9d.jpg",
+      "title": "Elemental Evil Player's Companion"
+    },
+    {
+      "categories": ["classes"],
+      "description": "",
+      "downloadLink": "https://media.wizards.com/2016/dnd/downloads/UA_RevisedRanger.pdf",
+      "imageUrl": "https://i.imgur.com/5NmPKZ3.jpg",
+      "title": "Revised Ranger"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1MVUHLUhqk8ulfoSEmd79pXMzwmlbDUKT&export=download",
+      "imageUrl": "https://i.imgur.com/Csw9wor.jpg",
+      "title": "Lost Mine Of Phandelver"
+    },
+    {
+      "categories": ["module", "items", "creatures", "backgrounds"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1ENZOX4ljpDz4fqn6T6VaetWiATnltDI7&export=download",
+      "imageUrl": "https://i.imgur.com/iNYGXDO.jpg",
+      "title": "Hoard of the Dragon Queen"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=13uKTLjBhr7kXBYq7Qwpr4nhlIDpKBE4q&export=download",
+      "imageUrl": "https://i.imgur.com/UiofHMo.jpg",
+      "title": "Princes of The Apocalypse"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1etZVBmR9GYc_cnyO8mKmg_8LiY_hS4Rg&export=download",
+      "imageUrl": "https://i.imgur.com/tkFenfH.jpg",
+      "title": "The Rise Of Tiamat"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1A7DU4vI_3-9yngQhhM7QvtVU7Xbpa_tc&export=download",
+      "imageUrl": "https://i.imgur.com/pyxiUZ4.jpg",
+      "title": "Out Of The Abyss"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "Friendly Demiplane Vampire",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1ROLKpB7fLaHUqCAuUP47rOCeIkRDQly4&export=download",
+      "imageUrl": "https://i.imgur.com/PfaXIpS.jpg",
+      "title": "Curse Of Strahd"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1XcXkfITg-IuR_fnL7yCeLaBTkVME-lb0&export=download",
+      "imageUrl": "https://i.imgur.com/Yh42eCN.jpg",
+      "title": "Storm King's Thunder"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1ZX9NiYENT71UC-aq2xaoKU5uWf4mUSER&export=download",
+      "imageUrl": "https://i.imgur.com/goxuo6P.jpg",
+      "title": "Tales From The Yawning Portal"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1oS6HadzuHQfObNm2YTH8i97Ze6cApPR1&export=download",
+      "imageUrl": "https://i.imgur.com/9cl0sld.jpg",
+      "title": "Tomb of Annihilation"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1g1wTtf-SBiTM1AiUDlJmOFj5BAR8eqgs&export=download",
+      "imageUrl": "https://i.imgur.com/RGNWbo2.jpg",
+      "title": "Waterdeep Dragon Heist"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1cbWP_99AaLRjdpUVqDQGGcsYP3frJbJJ&export=download",
+      "imageUrl": "https://i.imgur.com/mrAVH7V.jpg",
+      "title": "Waterdeep: Dungeon of the Mad Mage"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1EqgZzLOkg1PHwM62dDgV6ZDqidWj-bD1&export=download",
+      "imageUrl": "https://i.imgur.com/h5wioXD.jpg",
+      "title": "Ghosts of Saltmarsh"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1XdeAVe8t-5QNAacK9TbZKembN_Gk4amY&export=download",
+      "imageUrl": "https://i.imgur.com/jEdjwBy.jpg",
+      "title": "Baldur’s Gate: Descent into Avernus"
+    },
+    {
+      "categories": ["module", "items", "creatures", "spells"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1q1NKlA8SecwvUSmziCGSdJaBptf7ozEt&export=download",
+      "imageUrl": "https://i.imgur.com/MUwIUBY.jpg",
+      "title": "Icewind Dale: Rime of the Frostmaiden"
+    },
+    {
+      "categories": ["module", "items", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=10l6qyDfRBowDxKKmdpIDQccvv0XkpQIe&export=download",
+      "imageUrl": "https://i.imgur.com/HrlLPEW.jpg",
+      "title": "Candlekeep Mysteries"
+    },
+    {
+      "categories": ["races", "creatures"],
+      "description": "GRUNG CUTE!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1KvOYc-gYS2cifmq-gSP9baTAFqA0AkxC&export=download",
+      "imageUrl": "https://i.imgur.com/ZPdIVxK.jpg",
+      "title": "One Grung Above"
+    },
+    {
+      "categories": ["races", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1vF4ipadvCcdPY1wmhelfSK-wcoEsBuLa&export=download",
+      "imageUrl": "https://i.imgur.com/KZS9AH1.jpg",
+      "title": "The Tortle Package"
+    },
+    {
+      "categories": ["races", "classes", "spells", "creatures", "homebrew"],
+      "description": "The ultimate edgelord material",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=13O9MHKv2Rj-p0tJ5RDF41ScZQOAJvvd9&export=download",
+      "imageUrl": "https://i.imgur.com/oOULC2F.jpg",
+      "title": "Dark Arts Player's Companion"
+    },
+    {
+      "categories": ["misc"],
+      "description": "It's a Real-life Cookbook",
+      "downloadLink": "https://drive.google.com/file/d/1nSk9NVvgLA8jpqBjK3ZejbwQWWDb7AFY/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/31dO3ft.jpg",
+      "title": "Heroes' Feast The Official D&D Cookbook"
+    },
+    {
+      "categories": [
+        "classes",
+        "races",
+        "feats",
+        "creatures",
+        "items",
+        "spells"
+      ],
+      "description": "DRAGONS!!!!",
+      "downloadLink": "https://drive.google.com/u/0/uc?id=1xYPO7tK9Kh9DhHe2kp1gufPBni095Sln&export=download",
+      "imageUrl": "https://i.imgur.com/Wji4zczm.png",
+      "title": "Fizban's Treasury of Dragons"
+    },
+    {
+      "categories": ["races", "creatures"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/file/d/1osJvThaN-VtmFDP-hfYCzZsCXTI2l9A-/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/dxklKX0m.jpg",
+      "title": "Mordenkainen Presents: Monsters of the Multiverse"
+    },
+    {
+      "categories": ["misc"],
+      "description": "Cyberpunk 5e",
+      "downloadLink": "https://drive.google.com/file/d/1pcZ6rL7zIv_sVIui7mBw0dvnuva6EnFD/view?usp=sharing",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61LAZqTyHOL.jpg",
+      "title": "Ultramodern 5"
+    },
+    {
+      "categories": ["misc"],
+      "description": "Cyberpunk 5e",
+      "downloadLink": "https://drive.google.com/file/d/1QlJ4Nt_dqmNAILyKKTOggwRfWtpmmFno/view?usp=sharing",
+      "imageUrl": "https://www.drivethrurpg.com/images/10141/240798.jpg",
+      "title": "Esper Genesis 5e"
+    },
+    {
+      "categories": ["misc"],
+      "description": "Cyberpunk + Magic",
+      "downloadLink": "https://drive.google.com/file/d/1Lr8tLVXq90XlT_k3Dkk4qqfJfvb9qY0h/view?usp=sharing",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2c/Shadowrun4A.jpg",
+      "title": "Shadowrun 5e"
+    },
+    {
+      "categories": ["misc"],
+      "description": "Cyberpunk 5e",
+      "downloadLink": "https://drive.google.com/file/d/0B9weYkvEU386Z0wyM0p2Q2NfVEE/view?resourcekey=0-MZ15L5NHaElAKNE7cfn4yg",
+      "imageUrl": "https://www.enworld.org/attachments/fifth-age-png.79167/",
+      "title": "Fifth Age"
+    },
+    {
+      "categories": ["items", "races", "creatures", "items", "dm", "module"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/file/d/1Q-CjJk7TTlFeTRN1Ug4zqKu8H-2O25Pu/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/uo8Gqwem.jpg",
+      "title": "The Wild Beyond the Witchlight"
+    },
+    {
+      "categories": ["module", "dm"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/file/d/1w6RkeL-L-7J-O2SlRXQn6ni0mhJDKQSj/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/jNsh136m.jpg",
+      "title": "D&D's Journeys Through The Radiant Citadel"
+    },
+    {
+      "categories": [
+        "races",
+        "feats",
+        "items",
+        "spells",
+        "creatures",
+        "module",
+        "dm"
+      ],
+      "description": "",
+      "downloadLink": "https://drive.google.com/file/d/1NQPZy8KV_z_oUJ_h78Q_FG_aj7w8nFCD/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/AzbEbWpm.jpg",
+      "title": "Strixhaven A Curriculum of Chaos"
+    },
+    {
+      "categories": ["items", "module", "creatures", "dm"],
+      "description": "",
+      "downloadLink": "https://drive.google.com/file/d/1BlC78DIY8WDOwgmO-vwkUKDA-v2V86Ea/view?usp=sharing",
+      "imageUrl": "https://i.imgur.com/Kn2gecPm.jpg",
+      "title": "Critical Role - Call of the Netherdeep"
+    }
+  ]
+}
