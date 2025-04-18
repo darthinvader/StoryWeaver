@@ -26,8 +26,8 @@ interface BookCardProps {
 
 // Optional: Helper function for category display names/tooltips if needed later
 // function getCategoryTooltipText(categoryKey: string): string {
-//   // Add logic here to return more descriptive text based on the category key
-//   return `Information about ${categoryKey}`;
+// Add logic here to return more descriptive text based on the category key
+//  return `Information about ${categoryKey}`;
 // }
 
 export const BookCard = ({
