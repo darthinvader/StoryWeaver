@@ -9,9 +9,10 @@
         "feats",
         "creatures",
         "items",
-        "spells"
+        "spells",
+        "coreRules"
       ],
-      "description": "The Base D&D Book",
+      "description": "The essential rulebook for every D&D player! Contains character creation (races, classes, backgrounds), spells, equipment, and the fundamental rules of how to play the game. If you're a player, START HERE! (This is a Black & White, smaller file size version).",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1Ybs_vU4vC9W6AlQ_Y41BLFqATFkAEs_k&export=download",
       "imageUrl": "https://i.imgur.com/vbxznAp.jpg",
       "title": "Player's Handbook (OCR Black&White) Small Size"
@@ -25,58 +26,65 @@
         "feats",
         "creatures",
         "items",
-        "spells"
+        "spells",
+        "coreRules"
       ],
-      "description": "The Base D&D Book",
+      "description": "The essential rulebook for every D&D player! Contains character creation (races, classes, backgrounds), spells, equipment, and the fundamental rules of how to play the game. If you're a player, START HERE! (This is the full-color version).",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1gN-5wti1zyV7P5ncExd2vcZHee15d2Ku&export=download",
       "imageUrl": "https://i.imgur.com/vbxznAp.jpg",
       "title": "Player's Handbook (Color)"
     },
     {
-      "categories": ["base", "creatures", "dm"],
-      "description": "Most of the monster you need are here!",
+      "categories": ["base", "creatures", "dm", "coreRules"],
+      "description": "For Dungeon Masters: A huge collection of monsters, creatures, and potential adversaries to challenge your players. Includes statistics, lore, pictures, and tips for using monsters in your game. Essential for running most adventures.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1Dj-xj6nK-X4cvceXxR4ALURCK2Mgj_pQ&export=download",
       "imageUrl": "https://i.imgur.com/9KHc5T2.jpg",
       "title": "Monster Manual"
     },
     {
-      "categories": ["base", "creatures", "dm", "items"],
-      "description": "DM's Grab This First!",
+      "categories": ["base", "creatures", "dm", "items", "coreRules"],
+      "description": "For Dungeon Masters: Your guide to running the game! Covers creating adventures, magic items, optional rules, world-building advice, and tips for managing the game session. A must-have if you plan to be the DM!",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1fOm07g3uxIT3VyMC2qF-YADxnkZcbHGJ&export=download",
       "imageUrl": "https://i.imgur.com/HYClsr2.jpg",
       "title": "Dungeon Master's Guide"
     },
     {
-      "categories": ["races", "creatures", "dm"],
-      "description": "More Enemies and Races!",
+      "categories": ["races", "creatures", "dm", "majorExpansionsDM"],
+      "description": "Adds high-level monsters, lore about cosmic conflicts, and several new playable race options. Primarily useful for DMs looking for powerful foes and world lore. Note: Many races/monsters updated in 'Monsters of the Multiverse'.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1QOSNRdD9BVpnzyagwHtD7yhb2iQpVKgp&export=download",
       "imageUrl": "https://i.imgur.com/wzQYzkU.jpg",
       "title": "Mordenkaine's Tome Of Foes"
     },
     {
-      "categories": ["races", "creatures", "dm"],
-      "description": "Even More Enemies and Races!",
+      "categories": ["races", "creatures", "dm", "majorExpansionsDM"],
+      "description": "Features detailed lore and stats for various monstrous races (some playable), adding depth to classic D&D creatures. Great for DMs wanting more monster variety and background. Note: Many races/monsters updated in 'Monsters of the Multiverse'.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1zecdG_2fvL8pDsJs2KABoTFPdg88E5I8&export=download",
       "imageUrl": "https://i.imgur.com/MKwZNLj.jpg",
       "title": "Volo’s Guide to Monsters"
     },
     {
-      "categories": ["classes", "feats", "spells"],
-      "description": "",
+      "categories": ["classes", "feats", "spells", "majorExpansionsPlayer"],
+      "description": "A fantastic expansion primarily for players! Adds dozens of new subclasses for every class, many new spells, optional feats, and useful background tools. Highly recommended after the Player's Handbook.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1BVrZBJBi3UMi9jom5sQCPy565DZEDUVY&export=download",
       "imageUrl": "https://i.imgur.com/bi8AerU.jpg",
       "title": "Xanathar's Guide To Everything"
     },
     {
-      "categories": ["classes", "feats", "spells"],
-      "description": "",
+      "categories": ["classes", "feats", "spells", "majorExpansionsPlayer"],
+      "description": "Packed with player options! Includes more subclasses, the Artificer class reprinted, new spells, feats, magic items, optional class features to customize your character, and rules for sidekicks. Another great book after the Player's Handbook.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=16KE74X5PQyKUiSgzJXmgVi-bsbUCDpla&export=download",
       "imageUrl": "https://i.imgur.com/tOz9nV7.jpg",
       "title": "Tasha's Cauldron Of Everything"
     },
     {
-      "categories": ["classes", "races", "backgrounds", "spells"],
-      "description": "",
+      "categories": [
+        "classes",
+        "races",
+        "backgrounds",
+        "spells",
+        "settingGuides"
+      ],
+      "description": "Explore the Sword Coast region of the Forgotten Realms (the most common D&D setting). Includes character options like subclasses (e.g., Swashbuckler Rogue, Bladesinger Wizard) and backgrounds specific to this famous area.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1umExl1IP1BSKFIJmL3Y7PCiSRXGemist&export=download",
       "imageUrl": "https://i.imgur.com/mtPNSvE.jpg",
       "title": "Sword Coast Adventure Guide"
@@ -88,9 +96,10 @@
         "backgrounds",
         "spells",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Play D&D in the Magic: The Gathering world of Ravnica! Features new races (like Loxodon and Vedalken), subclasses tied to city guilds, backgrounds, monsters, and items unique to this massive city setting.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1Xv87I96BVIhRdUSswsLdT0cYJcLhWCk2&export=download",
       "imageUrl": "https://i.imgur.com/oH3IhwK.jpg",
       "title": "Guildmasters’ Guide to Ravnica"
@@ -102,9 +111,10 @@
         "backgrounds",
         "spells",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "A slightly humorous take on D&D, focusing on running your own adventuring franchise. Includes new player options (like the Gambler background), items, and roles within the company. Set in the Forgotten Realms.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1eLYhJm-jCeH1b6hdfCNA1FJlroZ1MKKc&export=download",
       "imageUrl": "https://i.imgur.com/rUCVQjA.jpg",
       "title": "Acquisition Incorporated"
@@ -117,9 +127,10 @@
         "backgrounds",
         "spells",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Dive into the unique 'magitech' world of Eberron. Introduces the Artificer class, new races (like Warforged and Shifters), Dragonmarks, and rich setting-specific lore.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1-u2__JMrtyinBfbn88DwFV89rsQNMLRp&export=download",
       "imageUrl": "https://i.imgur.com/BpRo2zM.jpg",
       "title": "Eberron Rising From The Last War"
@@ -131,9 +142,10 @@
         "backgrounds",
         "spells",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Based on the world featured in 'Critical Role'. Offers new subclasses (like Echo Knight), spells, magic items, monsters, and detailed information on the continent of Wildemount.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1hWvjab07by0aTNNczqlNRryShqeHjQ8b&export=download",
       "imageUrl": "https://i.imgur.com/FNRLfBH.jpg",
       "title": "Explorer's Guide To Wildemount"
@@ -146,9 +158,10 @@
         "backgrounds",
         "spells",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Adventure in a world inspired by Greek mythology! Introduces new races (like Leonin and Satyrs), subclasses (e.g., Oath of Glory Paladin), the Piety system, mythic monsters, and powerful artifacts.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1q4AcBZJG4ImZRVsuhHWMSh6t4PYFC3Bp&export=download",
       "imageUrl": "https://i.imgur.com/lg3xwKG.jpg",
       "title": "Mythic Odysseys of Theros"
@@ -160,156 +173,176 @@
         "feats",
         "backgrounds",
         "items",
-        "creatures"
+        "creatures",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Explore the Domains of Dread. Provides tools for running horror adventures, new character options (Dhampir, Hexblood, Reborn races; Undead Warlock, College of Spirits Bard subclasses), monsters, and details on Ravenloft's gothic horror realms.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1BoelRwVXuGq5l5EJqOL0oOo-76CL1lTY&export=download",
       "imageUrl": "https://i.imgur.com/kzE8cKw.jpg",
       "title": "Van Richten's Guide To Ravenloft"
     },
     {
-      "categories": ["races", "spells"],
-      "description": "",
+      "categories": ["races", "spells", "supplementaryOfficial"],
+      "description": "A free official PDF supplement released alongside 'Princes of the Apocalypse'. Adds several element-themed races (like Aarakocra and Genasi) and spells. Good free content!",
       "downloadLink": "https://media.wizards.com/2015/downloads/dnd/EE_PlayersCompanion.pdf",
       "imageUrl": "https://i.imgur.com/5O4HA9d.jpg",
       "title": "Elemental Evil Player's Companion"
     },
     {
-      "categories": ["classes"],
-      "description": "",
+      "categories": ["classes", "unearthedArcanaHomebrew"],
+      "description": "An official Unearthed Arcana (UA) playtest version of the Ranger class from 2016. UA content is experimental and not officially balanced. Always check with your DM before using UA material.",
       "downloadLink": "https://media.wizards.com/2016/dnd/downloads/UA_RevisedRanger.pdf",
       "imageUrl": "https://i.imgur.com/5NmPKZ3.jpg",
-      "title": "Revised Ranger"
+      "title": "Revised Ranger (Unearthed Arcana)"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A highly recommended starting adventure for new players and Dungeon Masters (Levels 1-5). A great introduction to D&D, set near the town of Phandalin.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1MVUHLUhqk8ulfoSEmd79pXMzwmlbDUKT&export=download",
       "imageUrl": "https://i.imgur.com/Csw9wor.jpg",
       "title": "Lost Mine Of Phandelver"
     },
     {
-      "categories": ["module", "items", "creatures", "backgrounds"],
-      "description": "",
+      "categories": [
+        "module",
+        "items",
+        "creatures",
+        "backgrounds",
+        "adventureModules"
+      ],
+      "description": "Part one of the Tyranny of Dragons campaign (Levels 1-7). Players must stop the Cult of the Dragon from bringing the evil dragon goddess Tiamat into the world.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1ENZOX4ljpDz4fqn6T6VaetWiATnltDI7&export=download",
       "imageUrl": "https://i.imgur.com/iNYGXDO.jpg",
       "title": "Hoard of the Dragon Queen"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A large campaign focused on investigating and stopping four dangerous elemental cults (Levels 1-15). Can be used with the free 'Elemental Evil Player's Companion'.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=13uKTLjBhr7kXBYq7Qwpr4nhlIDpKBE4q&export=download",
       "imageUrl": "https://i.imgur.com/UiofHMo.jpg",
       "title": "Princes of The Apocalypse"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "Part two of the Tyranny of Dragons campaign (Levels 8-15). The epic conclusion where players face the Cult of the Dragon and potentially Tiamat herself.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1etZVBmR9GYc_cnyO8mKmg_8LiY_hS4Rg&export=download",
       "imageUrl": "https://i.imgur.com/tkFenfH.jpg",
       "title": "The Rise Of Tiamat"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A challenging adventure set in the dangerous, subterranean Underdark (Levels 1-15). Features themes of survival, madness, and escaping demonic lords.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1A7DU4vI_3-9yngQhhM7QvtVU7Xbpa_tc&export=download",
       "imageUrl": "https://i.imgur.com/pyxiUZ4.jpg",
       "title": "Out Of The Abyss"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "Friendly Demiplane Vampire",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A very popular gothic horror campaign set in the cursed land of Barovia (Levels 1-10). Players must survive the mists and confront the iconic vampire lord Strahd von Zarovich.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1ROLKpB7fLaHUqCAuUP47rOCeIkRDQly4&export=download",
       "imageUrl": "https://i.imgur.com/PfaXIpS.jpg",
       "title": "Curse Of Strahd"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A sweeping adventure across the North of the Forgotten Realms involving giants causing chaos (Levels 1-11+). Features multiple possible starting points and paths.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1XcXkfITg-IuR_fnL7yCeLaBTkVME-lb0&export=download",
       "imageUrl": "https://i.imgur.com/Yh42eCN.jpg",
       "title": "Storm King's Thunder"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A collection of seven updated classic D&D dungeons for various levels (1-11+). Good for shorter adventures or dropping iconic locations into your campaign.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1ZX9NiYENT71UC-aq2xaoKU5uWf4mUSER&export=download",
       "imageUrl": "https://i.imgur.com/goxuo6P.jpg",
       "title": "Tales From The Yawning Portal"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A deadly jungle exploration and dungeon crawl adventure set on the mysterious island of Chult (Levels 1-11). Features dinosaurs, traps, a death curse, and a challenging final dungeon.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1oS6HadzuHQfObNm2YTH8i97Ze6cApPR1&export=download",
       "imageUrl": "https://i.imgur.com/9cl0sld.jpg",
       "title": "Tomb of Annihilation"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "An urban intrigue and treasure hunt adventure set in the famous city of Waterdeep (Levels 1-5). Features multiple possible villains and paths.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1g1wTtf-SBiTM1AiUDlJmOFj5BAR8eqgs&export=download",
       "imageUrl": "https://i.imgur.com/RGNWbo2.jpg",
       "title": "Waterdeep Dragon Heist"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A massive dungeon crawl through the legendary Undermountain beneath Waterdeep (Levels 5-20). Can follow up Waterdeep: Dragon Heist or stand alone.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1cbWP_99AaLRjdpUVqDQGGcsYP3frJbJJ&export=download",
       "imageUrl": "https://i.imgur.com/mrAVH7V.jpg",
       "title": "Waterdeep: Dungeon of the Mad Mage"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A collection of seven updated classic nautical-themed adventures (Levels 1-12). Set around the coastal town of Saltmarsh, it includes rules for ships and sea travel.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1EqgZzLOkg1PHwM62dDgV6ZDqidWj-bD1&export=download",
       "imageUrl": "https://i.imgur.com/h5wioXD.jpg",
       "title": "Ghosts of Saltmarsh"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A dark, epic adventure taking characters from Baldur's Gate into Avernus, the first layer of the Nine Hells (Levels 1-13). Features infernal war machines.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1XdeAVe8t-5QNAacK9TbZKembN_Gk4amY&export=download",
       "imageUrl": "https://i.imgur.com/jEdjwBy.jpg",
       "title": "Baldur’s Gate: Descent into Avernus"
     },
     {
-      "categories": ["module", "items", "creatures", "spells"],
-      "description": "",
+      "categories": [
+        "module",
+        "items",
+        "creatures",
+        "spells",
+        "adventureModules"
+      ],
+      "description": "A horror-themed adventure set in the frozen region of Icewind Dale (Levels 1-12). Features themes of survival, paranoia, and ancient secrets.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1q1NKlA8SecwvUSmziCGSdJaBptf7ozEt&export=download",
       "imageUrl": "https://i.imgur.com/MUwIUBY.jpg",
       "title": "Icewind Dale: Rime of the Frostmaiden"
     },
     {
-      "categories": ["module", "items", "creatures"],
-      "description": "",
+      "categories": ["module", "items", "creatures", "adventureModules"],
+      "description": "A collection of seventeen short, mystery-themed one-shot adventures connected to books found in Candlekeep (Levels 1-16). Great for single sessions.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=10l6qyDfRBowDxKKmdpIDQccvv0XkpQIe&export=download",
       "imageUrl": "https://i.imgur.com/HrlLPEW.jpg",
       "title": "Candlekeep Mysteries"
     },
     {
-      "categories": ["races", "creatures"],
-      "description": "GRUNG CUTE!",
+      "categories": ["races", "creatures", "supplementaryOfficial"],
+      "description": "Introduces the Grung, a playable race of poisonous frog-people. Originally extra content for charity, check with your DM if they allow this race. GRUNG CUTE!",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1KvOYc-gYS2cifmq-gSP9baTAFqA0AkxC&export=download",
       "imageUrl": "https://i.imgur.com/ZPdIVxK.jpg",
       "title": "One Grung Above"
     },
     {
-      "categories": ["races", "creatures"],
-      "description": "",
+      "categories": ["races", "creatures", "supplementaryOfficial"],
+      "description": "Introduces the Tortle, a playable race of anthropomorphic turtles. Originally extra content for charity, check with your DM if they allow this race.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1vF4ipadvCcdPY1wmhelfSK-wcoEsBuLa&export=download",
       "imageUrl": "https://i.imgur.com/KZS9AH1.jpg",
       "title": "The Tortle Package"
     },
     {
-      "categories": ["races", "classes", "spells", "creatures", "homebrew"],
-      "description": "The ultimate edgelord material",
+      "categories": [
+        "races",
+        "classes",
+        "spells",
+        "creatures",
+        "homebrew",
+        "unearthedArcanaHomebrew"
+      ],
+      "description": "Popular unofficial 'homebrew' content focusing on dark themes. This is NOT official D&D content; definitely check with your DM before using.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=13O9MHKv2Rj-p0tJ5RDF41ScZQOAJvvd9&export=download",
       "imageUrl": "https://i.imgur.com/oOULC2F.jpg",
-      "title": "Dark Arts Player's Companion"
+      "title": "Dark Arts Player's Companion (Homebrew)"
     },
     {
-      "categories": ["misc"],
-      "description": "It's a Real-life Cookbook",
+      "categories": ["misc", "miscellaneousThirdParty"],
+      "description": "Not a rulebook! This is an official Dungeons & Dragons cookbook filled with recipes inspired by the game's fantasy worlds. Cook like a hero!",
       "downloadLink": "https://drive.google.com/file/d/1nSk9NVvgLA8jpqBjK3ZejbwQWWDb7AFY/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/31dO3ft.jpg",
       "title": "Heroes' Feast The Official D&D Cookbook"
@@ -321,58 +354,66 @@
         "feats",
         "creatures",
         "items",
-        "spells"
+        "spells",
+        "majorExpansionsDM"
       ],
-      "description": "DRAGONS!!!!",
+      "description": "Everything about DRAGONS! Adds dragon-themed subclasses, new dragon races (Gem Dragons!), spells, magic items, tons of new dragon types, and deep dragon lore for DMs.",
       "downloadLink": "https://drive.google.com/u/0/uc?id=1xYPO7tK9Kh9DhHe2kp1gufPBni095Sln&export=download",
       "imageUrl": "https://i.imgur.com/Wji4zczm.png",
       "title": "Fizban's Treasury of Dragons"
     },
     {
-      "categories": ["races", "creatures"],
-      "description": "",
+      "categories": ["races", "creatures", "majorExpansionsDM"],
+      "description": "A huge compilation updating over 250 monsters and over 30 playable races from previous books. Presents the most current versions of these options. Very useful for both players and DMs.",
       "downloadLink": "https://drive.google.com/file/d/1osJvThaN-VtmFDP-hfYCzZsCXTI2l9A-/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/dxklKX0m.jpg",
       "title": "Mordenkainen Presents: Monsters of the Multiverse"
     },
     {
-      "categories": ["misc"],
-      "description": "Cyberpunk 5e",
+      "categories": ["misc", "miscellaneousThirdParty"],
+      "description": "A third-party supplement for running modern, tech-heavy, or sci-fi campaigns using the D&D 5e rules framework. This is NOT official D&D content.",
       "downloadLink": "https://drive.google.com/file/d/1pcZ6rL7zIv_sVIui7mBw0dvnuva6EnFD/view?usp=sharing",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61LAZqTyHOL.jpg",
-      "title": "Ultramodern 5"
+      "title": "Ultramodern 5 (Third Party)"
     },
     {
-      "categories": ["misc"],
-      "description": "Cyberpunk 5e",
+      "categories": ["misc", "miscellaneousThirdParty"],
+      "description": "A third-party sci-fi setting and rules expansion designed to be compatible with the D&D 5e system. Explore space opera themes. This is NOT official D&D content.",
       "downloadLink": "https://drive.google.com/file/d/1QlJ4Nt_dqmNAILyKKTOggwRfWtpmmFno/view?usp=sharing",
       "imageUrl": "https://www.drivethrurpg.com/images/10141/240798.jpg",
-      "title": "Esper Genesis 5e"
+      "title": "Esper Genesis 5e (Third Party)"
     },
     {
-      "categories": ["misc"],
-      "description": "Cyberpunk + Magic",
+      "categories": ["misc", "miscellaneousThirdParty"],
+      "description": "This appears to be for the Shadowrun system (likely 5th Edition), which is a completely DIFFERENT tabletop RPG blending cyberpunk and fantasy. It is NOT compatible with D&D 5e rules.",
       "downloadLink": "https://drive.google.com/file/d/1Lr8tLVXq90XlT_k3Dkk4qqfJfvb9qY0h/view?usp=sharing",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2c/Shadowrun4A.jpg",
-      "title": "Shadowrun 5e"
+      "title": "Shadowrun 5e (Different RPG System)"
     },
     {
-      "categories": ["misc"],
-      "description": "Cyberpunk 5e",
+      "categories": ["misc", "miscellaneousThirdParty"],
+      "description": "A third-party sci-fi rules conversion designed for use with D&D 5e. This is NOT official D&D content.",
       "downloadLink": "https://drive.google.com/file/d/0B9weYkvEU386Z0wyM0p2Q2NfVEE/view?resourcekey=0-MZ15L5NHaElAKNE7cfn4yg",
       "imageUrl": "https://www.enworld.org/attachments/fifth-age-png.79167/",
-      "title": "Fifth Age"
+      "title": "Fifth Age (Third Party)"
     },
     {
-      "categories": ["items", "races", "creatures", "items", "dm", "module"],
-      "description": "",
+      "categories": [
+        "items",
+        "races",
+        "creatures",
+        "dm",
+        "module",
+        "adventureModules"
+      ],
+      "description": "A whimsical adventure into the magical Feywild plane (Levels 1-8). Offers options for resolving encounters without combat and introduces new fey creatures and races (Fairy, Harengon).",
       "downloadLink": "https://drive.google.com/file/d/1Q-CjJk7TTlFeTRN1Ug4zqKu8H-2O25Pu/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/uo8Gqwem.jpg",
       "title": "The Wild Beyond the Witchlight"
     },
     {
-      "categories": ["module", "dm"],
-      "description": "",
+      "categories": ["module", "dm", "adventureModules"],
+      "description": "A collection of thirteen standalone adventures written by diverse authors, each set in a new location connected by the Radiant Citadel (Levels 1-14). Offers fresh perspectives and settings.",
       "downloadLink": "https://drive.google.com/file/d/1w6RkeL-L-7J-O2SlRXQn6ni0mhJDKQSj/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/jNsh136m.jpg",
       "title": "D&D's Journeys Through The Radiant Citadel"
@@ -385,16 +426,17 @@
         "spells",
         "creatures",
         "module",
-        "dm"
+        "dm",
+        "settingGuides"
       ],
-      "description": "",
+      "description": "Set in the Magic: The Gathering world's magical university. Includes new player options (backgrounds, feats, spells), monsters, rules for student activities, plus four short adventures (Levels 1-10).",
       "downloadLink": "https://drive.google.com/file/d/1NQPZy8KV_z_oUJ_h78Q_FG_aj7w8nFCD/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/AzbEbWpm.jpg",
       "title": "Strixhaven A Curriculum of Chaos"
     },
     {
-      "categories": ["items", "module", "creatures", "dm"],
-      "description": "",
+      "categories": ["items", "module", "creatures", "dm", "adventureModules"],
+      "description": "A campaign book inspired by 'Critical Role' set in the world of Exandria (Levels 3-12). Features underwater exploration, rival adventurers, and ties into the lore of the web series.",
       "downloadLink": "https://drive.google.com/file/d/1BlC78DIY8WDOwgmO-vwkUKDA-v2V86Ea/view?usp=sharing",
       "imageUrl": "https://i.imgur.com/Kn2gecPm.jpg",
       "title": "Critical Role - Call of the Netherdeep"
