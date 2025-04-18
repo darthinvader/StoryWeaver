@@ -1,6 +1,6 @@
 // src/routes/__root.tsx
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
-import { ThemeProvider } from "@/containers/theme-provider"; // Adjust path
+import { ThemeProvider } from "@/lib/theme-provider"; // Adjust path
 import { ThemeToggle } from "@/containers/theme-toggle"; // Adjust path
 
 export const Route = createRootRoute({

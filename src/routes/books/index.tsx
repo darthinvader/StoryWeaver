@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/accordion"; // Import Accordion components
 import { BookCard } from "@/containers/Book-Card";
 import { createFileRoute } from "@tanstack/react-router";
-import React from "react"; // Keep React import
 
 // Define the major categories in the desired display order (Newbie -> Advanced)
 const ORDERED_MAJOR_CATEGORIES = [
@@ -42,6 +41,10 @@ function getCategoryDisplayName(categoryKey: string): string {
       return "Unearthed Arcana & Homebrew (Use with Caution)";
     case "miscellaneousThirdParty":
       return "Miscellaneous & Third Party";
+    case "5.5E":
+      return "5.5E (Experimental)"; // Added for clarity
+    case "homebrew":
+      return "Homebrew (Custom Content)"; // Added for clarity
     case "misc":
       return "Other Resources"; // Renamed for clarity
     default:
