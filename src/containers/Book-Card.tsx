@@ -15,7 +15,6 @@ import {
   TooltipTrigger,
   // TooltipProvider, // Provider should wrap the page/app, not individual cards
 } from "@/components/ui/tooltip";
-import React from "react"; // Import React for potential fragments or complex logic
 
 interface BookCardProps {
   title: string;
