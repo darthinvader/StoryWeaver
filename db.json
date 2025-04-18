@@ -471,7 +471,7 @@
       "title": "The Book of Many Things: Card Reference"
     },
     {
-      "categories": ["base", "creatures", "dm", "items", "coreRules", "5.5"],
+      "categories": ["base", "creatures", "dm", "items", "5.5"],
       "description": "The revised Dungeon Master's Guide for the 2024 D&D rules update. Contains guidance for running the game, world-building tools, magic items, optional rules, and advice for Dungeon Masters. Designed to be compatible with previous 5th Edition materials.",
       "downloadLink": "https://drive.usercontent.google.com/download?id=1AawT0OPYPbjO41Wo8D_mC-he_yv6UpMD&export=download&authuser=0&confirm=t&uuid=909487c5-2ed7-4e94-9920-5ba6462d2e0c&at=APcmpox5aFYVgL17W7Xcojx-E_JH:1745007001359",
       "imageUrl": "https://i.imgur.com/JW8oOkol.jpg",
@@ -494,7 +494,6 @@
         "creatures",
         "items",
         "spells",
-        "coreRules",
         "5.5"
       ],
       "description": "The revised Player's Handbook for the 2024 D&D rules update. Contains updated rules for character creation (races, classes, backgrounds), spells, equipment, feats, and how to play. Designed to be compatible with previous 5th Edition materials.",

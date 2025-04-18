@@ -12,8 +12,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 // Define the major categories in the desired display order (Newest -> Older -> Advanced)
 const ORDERED_MAJOR_CATEGORIES = [
-  "5.5", // <-- ADDED: Newest rules first
   "coreRules", // Original core rules
+  "5.5", // <-- ADDED: Newest rules first
   "majorExpansionsPlayer", // Next step for players
   "adventureModules", // Essential for DMs running campaigns
   "majorExpansionsDM", // More DM resources (monsters, lore)
@@ -27,7 +27,7 @@ const ORDERED_MAJOR_CATEGORIES = [
 function getCategoryDisplayName(categoryKey: string): string {
   switch (categoryKey) {
     case "5.5": // <-- ADDED: Display name for the new category
-      return "Revised 2024 Rules (5.5E)";
+      return "Revised 2024 Rules (5.5E) Ask Your DM!";
     case "coreRules":
       return "Core Rules (5E - Start Here!)"; // <-- UPDATED: Clarified 5E
     case "majorExpansionsPlayer":
