@@ -7,13 +7,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"; // Import Accordion components
-import { BookCard } from "@/containers/Book-Card";
+// Import TooltipProvider - necessary for shadcn/ui tooltips to work
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { BookCard } from "@/containers/Book-Card"; // Assumes BookCard handles its own tooltips
 import { createFileRoute } from "@tanstack/react-router";
 
 // Define the major categories in the desired display order (Newest -> Older -> Advanced)
 const ORDERED_MAJOR_CATEGORIES = [
   "coreRules", // Original core rules
-  "5.5", // <-- ADDED: Newest rules first
+  "5.5", // Newest rules
   "majorExpansionsPlayer", // Next step for players
   "adventureModules", // Essential for DMs running campaigns
   "majorExpansionsDM", // More DM resources (monsters, lore)
@@ -26,10 +28,10 @@ const ORDERED_MAJOR_CATEGORIES = [
 // Helper function to get a display-friendly name for the category
 function getCategoryDisplayName(categoryKey: string): string {
   switch (categoryKey) {
-    case "5.5": // <-- ADDED: Display name for the new category
+    case "5.5":
       return "Revised 2024 Rules (5.5E) Ask Your DM!";
     case "coreRules":
-      return "Core Rules (5E - Start Here!)"; // <-- UPDATED: Clarified 5E
+      return "Core Rules (5E - Start Here!)";
     case "majorExpansionsPlayer":
       return "Player Expansions (More Options)";
     case "adventureModules":
@@ -44,9 +46,7 @@ function getCategoryDisplayName(categoryKey: string): string {
       return "Unearthed Arcana & Homebrew (Use with Caution)";
     case "miscellaneousThirdParty":
       return "Miscellaneous & Third Party";
-    // Removed redundant cases for homebrew/misc as they fall into the grouping logic
     default:
-      // Fallback for any unexpected category keys (like 'misc' if it gets books)
       return categoryKey
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
@@ -91,16 +91,11 @@ function BooksPageComponent() {
   }
 
   // --- Group Books by Major Category ---
-  // NOTE: This logic remains the same. Because "5.5" is now first in
-  // ORDERED_MAJOR_CATEGORIES, books with the "5.5" tag will be assigned
-  // to the "5.5" group correctly.
   const groupedBooks = books.reduce(
     (acc, book) => {
-      // Find the *first* category from the ordered list that the book belongs to
       const majorCategory = book.categories?.find((cat) =>
         ORDERED_MAJOR_CATEGORIES.includes(cat),
       );
-      // If no major category matches, assign it to 'misc'
       const groupKey = majorCategory || "misc";
 
       if (!acc[groupKey]) {
@@ -112,59 +107,89 @@ function BooksPageComponent() {
     {} as Record<string, Book[]>,
   );
 
-  // Define the final order, including 'misc' at the end if it has books
   const displayOrder = [...ORDERED_MAJOR_CATEGORIES, "misc"];
-
-  // Get keys of categories that actually have books, maintaining the desired order
   const categoriesWithBooks = displayOrder.filter(
     (key) => groupedBooks[key] && groupedBooks[key].length > 0,
   );
 
   // --- Render Collapsible Categories ---
   return (
-    <div className="p-4 md:p-6">
-      <Accordion
-        type="multiple" // Allow multiple sections open
-        // Default to opening the newest rules, original core, and player expansions
-        defaultValue={[
-          "5.5", // <-- ADDED: Open 5.5 by default
-          "coreRules",
-          "majorExpansionsPlayer",
-          // "adventureModules", // Optional: decide if you want this open too
-        ].filter((key) => categoriesWithBooks.includes(key))} // Only default open if they exist
-        className="w-full space-y-4"
-      >
-        {categoriesWithBooks.map((categoryKey) => {
-          const booksInCategory = groupedBooks[categoryKey];
-          // This check is technically redundant now due to filtering categoriesWithBooks
-          // if (!booksInCategory || booksInCategory.length === 0) return null;
+    // Wrap the main content area with TooltipProvider
+    <TooltipProvider delayDuration={300}>
+      {" "}
+      {/* Optional: Adjust delay */}
+      <div className="p-4 md:p-6">
+        <Accordion
+          type="multiple"
+          defaultValue={["5.5", "coreRules", "majorExpansionsPlayer"].filter(
+            (key) => categoriesWithBooks.includes(key),
+          )}
+          className="w-full space-y-4"
+        >
+          {categoriesWithBooks.map((categoryKey) => {
+            const booksInCategory = groupedBooks[categoryKey];
 
-          return (
-            <AccordionItem value={categoryKey} key={categoryKey}>
-              <AccordionTrigger className="bg-muted hover:bg-muted/90 rounded-md px-4 py-3 text-xl font-medium md:text-2xl">
-                {/* Use the display name function */}
-                {getCategoryDisplayName(categoryKey)} ({booksInCategory.length})
-              </AccordionTrigger>
-              <AccordionContent className="pt-4">
-                {" "}
-                {/* Add padding top to content */}
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
-                  {booksInCategory.map((book: Book) => (
-                    <BookCard
-                      key={book.title} // Use title as key (ensure uniqueness or use an ID if available)
-                      title={book.title}
-                      description={book.description}
-                      bookImage={book.imageUrl}
-                      bookLink={book.downloadLink}
-                      categories={book.categories}
-                    />
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          );
-        })}
-      </Accordion>
-    </div>
+            return (
+              <AccordionItem value={categoryKey} key={categoryKey}>
+                <AccordionTrigger className="bg-muted hover:bg-muted/90 rounded-md px-4 py-3 text-xl font-medium md:text-2xl">
+                  {getCategoryDisplayName(categoryKey)} (
+                  {booksInCategory.length})
+                </AccordionTrigger>
+                <AccordionContent className="pt-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+                    {booksInCategory.map((book: Book) => (
+                      <BookCard
+                        key={book.title}
+                        title={book.title}
+                        description={book.description}
+                        bookImage={book.imageUrl}
+                        bookLink={book.downloadLink}
+                        categories={book.categories}
+                        // --- TOOLTIP IMPLEMENTATION NOTE ---
+                        // The actual tooltips for description and categories
+                        // need to be implemented *inside* the BookCard component.
+                        //
+                        // Inside BookCard.tsx, you would:
+                        // 1. Import Tooltip components from "@/components/ui/tooltip":
+                        //    import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+                        //
+                        // 2. For the description:
+                        //    - Wrap the description text element (e.g., a <p> tag) with <TooltipTrigger>.
+                        //    - You might want to truncate the visible description (e.g., using CSS line-clamp).
+                        //    - Place the full description inside <TooltipContent>.
+                        //    - Example:
+                        //      <Tooltip>
+                        //        <TooltipTrigger asChild>
+                        //          <p className="line-clamp-3">{description}</p>
+                        //        </TooltipTrigger>
+                        //        <TooltipContent>
+                        //          <p>{description}</p>
+                        //        </TooltipContent>
+                        //      </Tooltip>
+                        //
+                        // 3. For the categories:
+                        //    - When mapping over the categories to display them (e.g., as badges),
+                        //      wrap each category element (e.g., a <span> or <Badge>) with <Tooltip> and <TooltipTrigger>.
+                        //    - Place the desired tooltip text (e.g., a fuller explanation of the category)
+                        //      inside <TooltipContent>. You might need a helper function to get this text.
+                        //    - Example (for one category badge):
+                        //      <Tooltip>
+                        //        <TooltipTrigger asChild>
+                        //          <Badge variant="secondary">{category}</Badge>
+                        //        </TooltipTrigger>
+                        //        <TooltipContent>
+                        //          <p>{getCategoryTooltipText(category)}</p> {/* Define this helper */}
+                        //        </TooltipContent>
+                        //      </Tooltip>
+                      />
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
+      </div>
+    </TooltipProvider>
   );
 }
