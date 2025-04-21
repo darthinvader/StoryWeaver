@@ -1,3 +1,4 @@
+// src/containers/auth-dialog.tsx
 import * as React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { signInUser, signUpUser } from "@/auth/authService";
@@ -11,28 +12,48 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+type AuthMode = "login" | "register";
+
 interface AuthDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  initialMode?: AuthMode;
 }
 
-export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
-  const [mode, setMode] = React.useState<"login" | "register">("login");
+export function AuthDialog({
+  open,
+  onOpenChange,
+  initialMode = "login",
+}: AuthDialogProps) {
+  const [mode, setMode] = React.useState<AuthMode>(initialMode);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [formError, setFormError] = React.useState<string | null>(null);
 
+  React.useEffect(() => {
+    if (open) {
+      setMode(initialMode);
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setFormError(null);
+    }
+  }, [open, initialMode]);
+
+  const mutationOptions = {
+    onError: (err: Error) => setFormError(err.message),
+    onSuccess: () => onOpenChange(false),
+  };
+
   const loginMutation = useMutation({
     mutationFn: () => signInUser({ email, password }),
-    onError: (err: any) => setFormError(err.message),
-    onSuccess: () => onOpenChange(false),
+    ...mutationOptions,
   });
 
   const registerMutation = useMutation({
     mutationFn: () => signUpUser({ email, password }),
-    onError: (err: any) => setFormError(err.message),
-    onSuccess: () => onOpenChange(false),
+    ...mutationOptions,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,15 +72,14 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
     }
   };
 
-  // TanStack Query v5: use status or pending
-  const isLoading =
-    loginMutation.status === "pending" || registerMutation.status === "pending";
+  const isLoading = loginMutation.isPending || registerMutation.isPending;
+  const isLoginMode = mode === "login";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{mode === "login" ? "Sign In" : "Register"}</DialogTitle>
+          <DialogTitle>{isLoginMode ? "Sign In" : "Register"}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -86,16 +106,14 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
             <Input
               id="password"
               type="password"
-              autoComplete={
-                mode === "login" ? "current-password" : "new-password"
-              }
+              autoComplete={isLoginMode ? "current-password" : "new-password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               disabled={isLoading}
             />
           </div>
-          {mode === "register" && (
+          {!isLoginMode && (
             <div>
               <label
                 htmlFor="confirmPassword"
@@ -115,19 +133,12 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
             </div>
           )}
           {formError && <p className="text-destructive text-sm">{formError}</p>}
-          {/* 
-            DialogFooter from your Dialog uses:
-            "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"
-            This means:
-              - On mobile: vertical, main button on bottom
-              - On desktop: horizontal, main button on right
-          */}
           <DialogFooter>
             <div className="flex w-full flex-col justify-between gap-2 sm:gap-4 md:flex-row">
               <Button type="submit" size="lg" disabled={isLoading}>
                 {isLoading
                   ? "Please wait…"
-                  : mode === "login"
+                  : isLoginMode
                     ? "Sign In"
                     : "Register"}
               </Button>
@@ -136,11 +147,9 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
                 className="text-muted-foreground text-sm"
                 type="button"
                 disabled={isLoading}
-                onClick={() =>
-                  setMode((m) => (m === "login" ? "register" : "login"))
-                }
+                onClick={() => setMode(isLoginMode ? "register" : "login")}
               >
-                {mode === "login"
+                {isLoginMode
                   ? "Need an account? Register"
                   : "Already have one? Sign In"}
               </Button>
