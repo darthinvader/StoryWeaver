@@ -1,24 +1,23 @@
-// src/components/theme-provider.tsx
 import {
   createContext,
   useContext,
-  useState,
   useEffect,
+  useState,
   ReactNode,
 } from "react";
 
 type Theme = "dark" | "light" | "system";
 
-type ThemeProviderProps = {
+interface ThemeProviderProps {
   children: ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
-};
+}
 
-type ThemeProviderState = {
+interface ThemeProviderState {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-};
+}
 
 const initialState: ThemeProviderState = {
   theme: "system",
@@ -30,7 +29,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "vite-ui-theme", // Or any key you prefer
+  storageKey = "vite-ui-theme", // Make sure this matches your storageKey in __root.tsx
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
@@ -42,23 +41,24 @@ export function ThemeProvider({
 
     root.classList.remove("light", "dark");
 
-    let systemTheme: Theme = "light"; // Default system theme
     if (theme === "system") {
-      systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
         ? "dark"
         : "light";
+
+      root.classList.add(systemTheme);
+      return;
     }
 
-    const effectiveTheme = theme === "system" ? systemTheme : theme;
-
-    root.classList.add(effectiveTheme); // Add 'light' or 'dark' class
+    root.classList.add(theme);
   }, [theme]);
 
   const value = {
     theme,
-    setTheme: (newTheme: Theme) => {
-      localStorage.setItem(storageKey, newTheme);
-      setTheme(newTheme);
+    setTheme: (theme: Theme) => {
+      localStorage.setItem(storageKey, theme);
+      setTheme(theme);
     },
   };
 
@@ -69,6 +69,7 @@ export function ThemeProvider({
   );
 }
 
+// Export the useTheme hook
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 
