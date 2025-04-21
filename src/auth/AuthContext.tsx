@@ -1,4 +1,3 @@
-// src/auth/AuthContext.tsx
 import React, {
   createContext,
   useState,
@@ -7,7 +6,6 @@ import React, {
   ReactNode,
 } from "react";
 import { Session, User, Subscription } from "@supabase/supabase-js";
-
 import { getCurrentSession, subscribeToAuthStateChange } from "./authService";
 
 interface AuthContextType {
@@ -31,59 +29,47 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     let isMounted = true;
     let authSubscription: Subscription | null = null;
 
-    // 1. Get initial session
     getCurrentSession()
       .then(({ session: initialSession }) => {
         if (isMounted) {
           setSession(initialSession);
           setUser(initialSession?.user ?? null);
-          // Don't setLoading(false) here yet, wait for subscription setup
         }
       })
       .catch((err) => {
         console.error("Error fetching initial session:", err);
-        // Still need to stop loading if initial fetch fails
         if (isMounted) {
           setLoading(false);
         }
       })
       .finally(() => {
-        // 2. Attempt to subscribe *after* initial session check completes
-        if (!isMounted) return; // Don't subscribe if already unmounted
+        if (!isMounted) return;
 
         try {
           const { data } = subscribeToAuthStateChange(
             (_event, currentSession) => {
               if (isMounted) {
-                console.log("Auth state changed:", _event, currentSession);
                 setSession(currentSession);
                 setUser(currentSession?.user ?? null);
-                // Ensure loading is false once we receive the first auth state update
-                // or after successful subscription setup.
                 if (loading) setLoading(false);
               }
             },
           );
           authSubscription = data?.subscription ?? null;
-          // Set loading to false after successful subscription setup
           if (isMounted) setLoading(false);
         } catch (error) {
-          // Catch errors thrown by subscribeToAuthStateChange
           console.error("Failed to subscribe to auth state changes:", error);
-          // Handle subscription error appropriately
-          if (isMounted) setLoading(false); // Stop loading if subscription fails
+          if (isMounted) setLoading(false);
         }
       });
 
-    // Cleanup listener on component unmount
     return () => {
       isMounted = false;
       if (authSubscription) {
-        console.log("Unsubscribing from auth state changes.");
         authSubscription.unsubscribe();
       }
     };
-  }, []); // Empty dependency array
+  }, [loading]); // Added loading dependency to potentially re-run if initial load fails before subscribe
 
   const value = {
     session,
@@ -91,6 +77,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     loading,
   };
 
+  // Render children only when loading is complete
   return (
     <AuthContext.Provider value={value}>
       {loading ? null : children}
@@ -98,7 +85,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (context === undefined) {

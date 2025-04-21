@@ -29,7 +29,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "vite-ui-theme", // Make sure this matches your storageKey in __root.tsx
+  storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
@@ -69,7 +69,6 @@ export function ThemeProvider({
   );
 }
 
-// Export the useTheme hook
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 

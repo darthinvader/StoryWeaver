@@ -1,4 +1,3 @@
-// src/containers/theme-toggle.tsx
 import { Moon, Sun, Laptop } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 import { Button } from "@/components/ui/button";

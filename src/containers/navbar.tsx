@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { AuthMenu } from "@/containers/auth-menu";
+import { ThemeToggle } from "@/containers/theme-toggle";
 
 export function NavBar() {
   const navLinks: Array<{ to: string; label: string }> = [
     { to: "/", label: "Home" },
     { to: "/books", label: "Books" },
-    // …add more links here
   ];
 
   return (
@@ -23,6 +23,7 @@ export function NavBar() {
         ))}
       </nav>
       <div className="flex items-center gap-2">
+        <ThemeToggle />
         <AuthMenu />
       </div>
     </header>

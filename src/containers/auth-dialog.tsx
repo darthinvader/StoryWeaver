@@ -1,4 +1,3 @@
-// src/containers/auth-dialog.tsx
 import * as React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { signInUser, signUpUser } from "@/auth/authService";
