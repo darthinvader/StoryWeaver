@@ -1,38 +1,57 @@
-// src/api/api.ts
-import apiClient from "./apiClient"; // Using path alias based on your example
+import { supabase } from "./supabaseClient"; // Import the supabase client
 import { BooksSchema, type Book } from "./schemas";
 import { ZodError } from "zod";
-// import { HTTPError } from 'ky'; // Uncomment if needed for specific ky error handling
+import { PostgrestError } from "@supabase/supabase-js"; // Import Supabase error type
 
 /**
- * Fetches a list of books from the specified API endpoint.
+ * Fetches a list of books from the Supabase 'books' table.
  * Validates the response against the BooksSchema.
  *
- * @param endpoint - The API endpoint path (e.g., "books"). Defaults to "books".
  * @returns A promise resolving to an array of validated Book objects.
- * @throws {ZodError} If API response data fails validation.
- * @throws {HTTPError | Error} If the network request fails or JSON parsing errors occur.
+ * @throws {ZodError} If Supabase response data fails validation.
+ * @throws {PostgrestError | Error} If the Supabase query fails or other errors occur.
  */
-export const fetchBooks = async (endpoint: string = "books"): Promise<Book[]> => {
-  console.log(`Fetching books from endpoint: /${endpoint}`);
+export const fetchBooks = async (): Promise<Book[]> => {
+  console.log("Fetching books from Supabase 'books' table...");
   try {
-    const response = await apiClient.get(endpoint);
-    const data = await response.json(); // Parse JSON response
+    // Query the 'books' table, selecting all columns
+    const { data, error } = await supabase.from("DnDBooks").select("*");
 
-    // Validate data structure - .parse throws ZodError on failure
+    // Handle Supabase query errors
+    if (error) {
+      console.error("Supabase query failed:", error);
+      throw error; // Re-throw the Supabase error
+    }
+
+    // Handle case where data is unexpectedly null (though select usually returns [])
+    if (!data) {
+      console.warn("Supabase returned null data for 'books' query.");
+      return []; // Or throw an error if this shouldn't happen
+    }
+
+    console.log(`Received ${data.length} records from Supabase.`);
+
+    // Validate data structure using Zod - .parse throws ZodError on failure
     const validatedBooks = BooksSchema.parse(data);
-    console.log(`Successfully validated ${validatedBooks.length} books from /${endpoint}.`);
+    console.log(
+      `Successfully validated ${validatedBooks.length} books from Supabase.`
+    );
     return validatedBooks;
-
   } catch (error) {
     if (error instanceof ZodError) {
       // Access detailed validation issues via error.issues
-      console.error(`Zod validation failed for /${endpoint}:`, error.issues);
+      console.error("Zod validation failed for Supabase data:", error.issues);
+    } else if (error instanceof PostgrestError) {
+      // Already logged above, but you could add specific handling here
+      console.error("Supabase PostgrestError during fetch:", error.message);
     } else {
-      // Handle network errors (like ky's HTTPError) or other exceptions
-      console.error(`Failed to fetch or parse books from /${endpoint}:`, error);
+      // Handle other unexpected errors
+      console.error("Failed to fetch or parse books from Supabase:", error);
     }
-    // Re-throw the error for React Query to handle (e.g., set query status to 'error')
+    // Re-throw the error for React Query to handle
     throw error;
   }
 };
+
+// Remove or comment out the old apiClient import if no longer needed
+// import apiClient from "./apiClient";

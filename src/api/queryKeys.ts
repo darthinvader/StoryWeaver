@@ -1,5 +1,3 @@
-// src/lib/queryKeys.ts
-
 /**
  * Centralized factory for creating query keys for TanStack Query.
  * Query keys are arrays used to uniquely identify data in the cache.
@@ -8,12 +6,10 @@
 export const queryKeys = {
   books: {
     /**
-     * Generates the query key for fetching a list of books.
-     * Includes the endpoint name because the data depends on it.
-     * Example usage: queryKeys.books.list('books'), queryKeys.books.list('featured')
-     * @param endpoint - The specific API endpoint for the books list.
+     * Generates the query key for fetching the list of all books from Supabase.
+     * Example usage: queryKeys.books.list()
      */
-    list: (endpoint: string = "books") => ["books", "list", endpoint] as const,
+    list: () => ["books", "list"] as const, // Simplified key
 
     /**
      * Example: Generates the query key for fetching a single book by its ID.
@@ -22,9 +18,5 @@ export const queryKeys = {
      */
     // detail: (id: string | number) => ["books", "detail", String(id)] as const,
   },
-  // Add keys for other data types/features here
-  // users: {
-  //   all: () => ['users', 'list'] as const,
-  //   detail: (id: string) => ['users', 'detail', id] as const,
-  // }
+  // ... other keys
 };
