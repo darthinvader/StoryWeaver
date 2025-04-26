@@ -1,10 +1,10 @@
-import SimpleGridExample from "@/containers/gridstack/simple";
+// src/routes/characters/index.tsx
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/characters/")({
-  component: RouteComponent,
+  component: CharactersPage,
 });
 
-function RouteComponent() {
+function CharactersPage() {
   return <div></div>;
 }
