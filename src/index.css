@@ -1,9 +1,10 @@
+@import "react-grid-layout/css/styles.css";
+@import "react-resizable/css/styles.css";
 @import "tailwindcss";
 @import "tw-animate-css"; /* Assuming you use this for animations */
 
 /* Tells Tailwind to activate dark: utilities when .dark is present */
 @custom-variant dark (&:is(.dark *));
-@import "gridstack/dist/gridstack.min.css";
 
 /* Define BASE variables (Light Theme) */
 :root {
