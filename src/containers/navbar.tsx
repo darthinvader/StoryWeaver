@@ -6,6 +6,7 @@ export function NavBar() {
   const navLinks: Array<{ to: string; label: string }> = [
     { to: "/", label: "Home" },
     { to: "/books", label: "Books" },
+    { to: "/characters", label: "Characters" },
   ];
 
   return (

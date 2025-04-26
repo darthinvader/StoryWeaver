@@ -3,6 +3,7 @@
 
 /* Tells Tailwind to activate dark: utilities when .dark is present */
 @custom-variant dark (&:is(.dark *));
+@import "gridstack/dist/gridstack.min.css";
 
 /* Define BASE variables (Light Theme) */
 :root {
