@@ -61,17 +61,19 @@ export const BackgroundComponent: React.FC<BackgroundComponentProps> = ({
   };
 
   return (
-    <div
-      className={cn(
-        "h-full w-full",
-        "bg-gradient-to-br from-zinc-900 to-zinc-800", // Base background
-        className,
-      )}
-      style={backgroundStyle}
-      {...props}
-    >
-      {/* Ensure children are relatively positioned to appear above the background */}
-      <div className="relative z-[1] h-full w-full">{children}</div>
+    <div className="bg-gradient-to-br">
+      <div
+        className={cn(
+          "h-full w-full",
+
+          className,
+        )}
+        style={backgroundStyle}
+        {...props}
+      >
+        {/* Ensure children are relatively positioned to appear above the background */}
+        <div className="relative z-[1] h-full w-full">{children}</div>
+      </div>
     </div>
   );
 };

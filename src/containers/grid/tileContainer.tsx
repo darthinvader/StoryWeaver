@@ -7,7 +7,16 @@ import RGL, {
 } from "react-grid-layout";
 import { cn } from "@/lib/utils";
 import { BackgroundComponent } from "./corner-guide-background";
-
+const availableHandles: ResizeHandle = [
+  "s",
+  "w",
+  "e",
+  "n",
+  "sw",
+  "nw",
+  "se",
+  "ne",
+] as const;
 interface BasicLayoutProps extends ReactGridLayoutProps {
   className?: string;
   rowHeight?: number;
@@ -30,7 +39,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
   rowHeight = 30,
   layout = [],
   containerPadding = [0, 0],
-  containerMargin = [0, 0],
+  containerMargin = [0, 1],
   onLayoutChange = () => {},
   children,
   ...props
@@ -69,7 +78,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
   console.log("height", containerRef.current?.clientHeight);
   const childrenWithKeys = children?.map((child, index) => {
     return (
-      <div className="m-0 h-full w-full p-0" key={index}>
+      <div className="bg- h-full w-full" key={index}>
         {child}
       </div>
     );
@@ -101,9 +110,10 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
       gridWidth={dimensions.width / getColumnCount()}
       gridHeight={tileHeight()}
       ref={containerRef}
+      variant="dashed-lines"
     >
       <ReactGridLayout
-        resizeHandles={["se"]}
+        resizeHandles={availableHandles}
         verticalCompact={false}
         layout={currentLayout}
         onLayoutChange={handleLayoutChange}
