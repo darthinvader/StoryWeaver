@@ -15,7 +15,7 @@ function CharactersPage() {
     { i: "4", x: 8, y: 0, w: 2, h: 2 },
   ];
   return (
-    <div className="h-100 w-100">
+    <div className="h-full w-full">
       <BasicLayout layout={layout}>
         {["hgi", <div>Hello</div>, "hello", "hasjadh"]}
       </BasicLayout>

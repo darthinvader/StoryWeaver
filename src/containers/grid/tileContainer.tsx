@@ -6,6 +6,7 @@ import RGL, {
   ReactGridLayoutProps,
 } from "react-grid-layout";
 import { cn } from "@/lib/utils";
+import { BackgroundComponent } from "./corner-guide-background";
 
 interface BasicLayoutProps extends ReactGridLayoutProps {
   className?: string;
@@ -16,12 +17,12 @@ interface BasicLayoutProps extends ReactGridLayoutProps {
   cols?: number;
   containerPadding?: [number, number];
   containerMargin?: [number, number];
+  height?: number;
   children?: JSX.Element[];
 }
 
 const ReactGridLayout = WidthProvider(RGL);
 
-// Use React.FC with the props interface
 export const BasicLayout: React.FC<BasicLayoutProps> = ({
   className = "layout",
   automatic = true,
@@ -36,31 +37,27 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
 }) => {
   const [currentLayout, _setCurrentLayout] = useState<Layout[]>(layout);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  // Memoized function to update dimensions
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const updateDimensions = useCallback(() => {
     if (containerRef.current) {
       setDimensions({
-        width: containerRef.current.offsetWidth, // Includes padding and border
-        height: containerRef.current.offsetHeight, // Includes padding and border
-        // Alternatively, use clientWidth/clientHeight for size excluding border
-        // width: containerRef.current.clientWidth,
-        // height: containerRef.current.clientHeight,
+        width: containerRef.current.offsetWidth,
+        height: containerRef.current.offsetHeight,
       });
     }
-  }, []); // No dependencies, relies on ref.current
+  }, []);
 
   useEffect(() => {
-    // Initial measurement on mount
     updateDimensions();
 
-    // Add resize event listener
     window.addEventListener("resize", updateDimensions);
 
-    // Cleanup function to remove listener on unmount
     return () => {
       window.removeEventListener("resize", updateDimensions);
     };
-  }, [updateDimensions]); // Re-run effect if updateDimensions changes (it won't here due to useCallback)
+  }, [updateDimensions]);
 
   const handleLayoutChange = useCallback(
     (newLayout: Layout[]) => {
@@ -68,7 +65,6 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
     },
     [onLayoutChange],
   );
-  const containerRef = useRef<HTMLDivElement>(null);
   console.log("width", containerRef.current?.clientWidth);
   console.log("height", containerRef.current?.clientHeight);
   const childrenWithKeys = children?.map((child, index) => {
@@ -78,40 +74,48 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
       </div>
     );
   });
-  const height = () => {
+  const tileHeight = () => {
     if (!automatic) return rowHeight;
-    if (dimensions.height) {
-      const allHeight = dimensions.height;
-      const heightDivider = allHeight > 800 ? 8 : 6;
-      console.log("newHeight", (2 * allHeight) / heightDivider);
-
-      return Math.ceil((2 * allHeight) / heightDivider);
-    }
-    return 12;
+    // Why Math.SQRT2? Because the grid is a square, and we want to make sure that ratios are similar to A4 paper.
+    // So we need to divide the width by the square root of 2 to get the height.
+    // This is a bit of a visual trick, will try with different values later. (1.5 is a good value too 16/9 is 1.7777 which is also a good value too)
+    const columnCount = getColumnCount();
+    const columnWidth = dimensions.width / columnCount;
+    if (columnCount === 0) return 0;
+    if (columnCount === 12 || columnCount === 8)
+      return columnWidth / (2 * Math.SQRT2);
+    else return columnWidth / Math.SQRT2;
   };
-  const newCols = () => {
+  const getColumnCount = () => {
     if (!automatic) return cols;
     if (dimensions.width) {
       const allWidth = dimensions.width;
-      return allWidth > 1280 ? 12 : allWidth > 1024 ? 8 : 4;
+      return allWidth > 1280 ? 12 : allWidth > 800 ? 8 : 4;
     }
     return 8;
   };
   console.log("dimensions", dimensions);
+
   return (
-    <div ref={containerRef} className="h-full w-full">
+    <BackgroundComponent
+      gridWidth={dimensions.width / getColumnCount()}
+      gridHeight={tileHeight()}
+      ref={containerRef}
+    >
       <ReactGridLayout
+        resizeHandles={["se"]}
+        verticalCompact={false}
         layout={currentLayout}
         onLayoutChange={handleLayoutChange}
         className={cn(className)}
-        rowHeight={height()}
-        cols={newCols()}
+        rowHeight={tileHeight()}
+        cols={getColumnCount()}
         containerPadding={containerPadding}
         margin={containerMargin}
         {...props}
       >
         {childrenWithKeys}
       </ReactGridLayout>
-    </div>
+    </BackgroundComponent>
   );
 };
