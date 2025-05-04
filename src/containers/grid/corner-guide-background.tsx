@@ -3,8 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils"; // Adjust import path as needed
 
-interface BackgroundComponentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface BackgroundComponentProps extends React.ComponentProps<"div"> {
   gridWidth: number;
   gridHeight: number;
   lineColor?: string;
@@ -26,6 +25,7 @@ export const BackgroundComponent: React.FC<BackgroundComponentProps> = ({
   dotSize = 1,
   children,
   className,
+  ref,
   style,
   ...props
 }) => {
@@ -34,7 +34,11 @@ export const BackgroundComponent: React.FC<BackgroundComponentProps> = ({
       "BackgroundComponent: grid dimensions, lineWidth, and dotSize must be positive.",
     );
     return (
-      <div className={cn("relative h-full w-full", className)} {...props}>
+      <div
+        className={cn("relative h-full w-full", className)}
+        {...props}
+        ref={ref}
+      >
         {children}
       </div>
     );

@@ -7,7 +7,8 @@ import RGL, {
 } from "react-grid-layout";
 import { cn } from "@/lib/utils";
 import { BackgroundComponent } from "./corner-guide-background";
-const availableHandles: ResizeHandle = [
+import { ResizeHandle } from "react-resizable";
+const availableHandles: ResizeHandle[] = [
   "s",
   "w",
   "e",
@@ -78,7 +79,7 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
   console.log("height", containerRef.current?.clientHeight);
   const childrenWithKeys = children?.map((child, index) => {
     return (
-      <div className="bg- h-full w-full" key={index}>
+      <div className="h-full w-full" key={index}>
         {child}
       </div>
     );
@@ -110,7 +111,6 @@ export const BasicLayout: React.FC<BasicLayoutProps> = ({
       gridWidth={dimensions.width / getColumnCount()}
       gridHeight={tileHeight()}
       ref={containerRef}
-      variant="dashed-lines"
     >
       <ReactGridLayout
         resizeHandles={availableHandles}

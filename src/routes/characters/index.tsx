@@ -1,5 +1,5 @@
 // src/routes/characters/index.tsx
-import { BasicLayout } from "@/containers/grid/tileContainer";
+import { BasicLayout } from "@/containers/grid/tile-container";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/characters/")({
